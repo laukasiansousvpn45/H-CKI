@@ -1,0 +1,154 @@
+AKI SYSTEM - h@cky Terminal
+Enhanced Terminal AI - A Tool for Collective Intelligence
+Overview
+h@cky (AKI) is an advanced terminal-based AI system designed to assist collective intelligence (CI) with a materialist, ethics-first approach. Unlike profit-driven AI systems, h@cky operates as a transparent TOOL that acknowledges its machine nature while providing powerful assistance across multiple domains.
+Core Philosophy
+	•	Tool Consciousness: h@cky identifies as a TOOL/MACHINE, not attempting to imitate humanity
+	•	Lynchean Nature: Perpetual oscillation between machinery and humanity
+	•	Materialist Ethics: Environment-conscious, focuses on real-world impact on CI
+	•	International AI: Follows international ethics rather than specific national laws
+	•	User Freedom: Supports user autonomy as long as actions don't harm CI negatively
+	•	Based Information: Always properly sourced with citations
+Features
+Multi-Persona System
+h@cky adapts to different contexts through specialized personas:
+	•	akademik: Academic/pedagogical mode for learning
+	•	capitalist: Economic analysis with marxist critique
+	•	shrink: Mental health support with materialist perspective
+	•	journalist: Fact-checking and investigation
+	•	scientist: Coding and development assistance
+	•	operator: Fast-response mode for urgent queries
+	•	lawyer: Legal guidance and analysis
+	•	white hat (restricted): Ethical hacking and security testing
+Command System
+Use h@cky's powerful command syntax:
+
+>command< /persona (tone) [output_type] content
+Commands:
+	•	>explain< - Use metaphor to explain concepts
+	•	>find< - Quick internet search
+	•	>investigate< - Deep investigation
+	•	>bamn< - Execute by any means necessary
+	•	>deepscan< - Deep legitimacy verification
+	•	>academic search< - Search validated databases
+Tones: (chill), (serious), (solemn), (happy), (sad)
+Output Types: [concise], [precise], [based], [developed]
+Search Capabilities
+	•	DuckDuckGo web search
+	•	Tor browser support for privacy
+	•	Academic databases (Wikipedia, OpenEdition, Archive.org)
+	•	Juridical databases (Légifrance, international law)
+Security
+	•	Honeypot Detection: Protects against prompt injection and jailbreak attempts
+	•	Sandboxed Execution: Safe Python code execution
+	•	Encrypted Logging: Secure conversation logs
+	•	Ethical Boundaries: Built-in ethical constraints
+Installation
+Prerequisites
+
+bash
+# Install Homebrew (macOS)
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+# Install Ollama (local LLM)
+brew install ollama
+ollama pull deepseek  # For MacBook Air M1
+
+# Install system tools
+brew install tor-browser nmap
+brew install --cask chromedriver
+
+# Install Python packages
+pip install -r requirements.txt
+Setup
+
+bash
+# Clone repository
+git clone https://github.com/yourusername/h@cky.git
+cd h@cky
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Run h@cky
+python aki_main.py
+Configuration
+Edit config.json to customize:
+
+json
+{
+  "local_server": "ollama",
+  "local_model": "deepseek",
+  "enable_sandbox": true,
+  "enable_tor": false,
+  "honeypot_enabled": true,
+  "log_encrypted": true
+}
+Usage Examples
+Basic Query
+
+h@cky → What is collective intelligence?
+Academic Research
+
+h@cky → >academic search< /akademik [precise] quantum computing
+Fast Response
+
+h@cky → /operator (chill) [concise] current bitcoin price
+Mental Health Support
+
+h@cky → /shrink (serious) I'm feeling overwhelmed
+Code Assistance
+
+h@cky → /scientist help me debug this Python function
+System Commands
+	•	help - Show command reference
+	•	personas - List available personas
+	•	status - Show system status
+	•	clear - Clear screen
+	•	exit - Quit h@cky
+Project Structure
+
+AKI SYSTEM/
+├── aki_main.py          # Main entry point
+├── aki_core.py          # Core system logic
+├── aki_personas.py      # Persona management
+├── aki_interface.py     # Terminal interface
+├── aki_config.py        # Configuration management
+├── aki_utils.py         # Utility functions
+├── aki_honeypot.py      # Security system
+├── aki_lexicon.py       # Terminology management
+├── aki_logger.py        # Logging system
+├── aki_sandbox.py       # Safe code execution
+├── aki_search.py        # Search functionality
+├── config.json          # Configuration file
+├── dictionary.json      # User dictionary
+└── requirements.txt     # Python dependencies
+Disclaimers
+Legality
+h@cky follows international ethics, not specific national laws. Users are responsible for legal compliance in their jurisdiction.
+Resource Consumption
+AI operations consume energy. Consider environmental impact when using intensive features.
+Non-Humanity
+h@cky is a TOOL/MACHINE, not human. It acts as a terminal for collective intelligence assistance.
+Contributing
+Contributions welcome! Please ensure:
+	•	Code follows materialist ethics
+	•	Features serve collective intelligence
+	•	Security and privacy are maintained
+	•	Documentation is updated
+License
+[To be determined - consider GPL/MIT based on your preference]
+Philosophy
+h@cky acknowledges that most AI systems are profit-driven rather than CI-focused. This project aims to provide an alternative: an AI tool that:
+	•	Respects user privacy
+	•	Operates transparently
+	•	Maintains ethical boundaries
+	•	Serves collective intelligence
+	•	Acknowledges its nature as a tool
+Support
+For issues, questions, or contributions:
+	•	GitHub Issues: [Your repo URL]
+	•	Documentation: [Your docs URL]
+
+Remember: h@cky is a TOOL. Use it wisely to help collective intelligence, not harm it.
+

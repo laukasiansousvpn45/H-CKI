@@ -1,0 +1,89 @@
+#!/bin/bash
+
+# Create Xcode Project Setup Script
+# This helps organize files for Xcode import
+
+echo "╔═══════════════════════════════════════╗"
+echo "║  AKI Terminal - Xcode Setup Helper   ║"
+echo "╚═══════════════════════════════════════╝"
+echo ""
+
+# Create directory for Xcode files
+mkdir -p xcode_files
+cd xcode_files
+
+echo "[1/4] Creating Swift files..."
+
+# Create AKITerminalApp.swift
+cat > AKITerminalApp.swift << 'EOF'
+// Paste the AKITerminalApp.swift content here
+// (Copy from the artifact I created)
+EOF
+
+# Create ContentView.swift
+cat > ContentView.swift << 'EOF'
+// Paste the ContentView.swift content here
+// (Copy from the artifact I created)
+EOF
+
+echo "[✓] Swift files created in xcode_files/"
+
+# Copy Python backend
+echo "[2/4] Setting up Python backend..."
+cp ../aki_backend.py . 2>/dev/null || echo "Create aki_backend.py from artifact"
+cp ../aki_simple.py . 2>/dev/null || echo "Copy aki_simple.py if you want full integration"
+
+echo "[✓] Python files ready"
+
+# Create README for Xcode
+cat > README_XCODE.txt << 'EOF'
+XCODE PROJECT SETUP
+===================
+
+1. Open Xcode
+2. File → New → Project
+3. Choose: macOS → App
+4. Name: "AKI Terminal"
+5. Interface: SwiftUI, Language: Swift
+
+6. After project created:
+   - Replace AKITerminalApp.swift with file from this folder
+   - Replace ContentView.swift with file from this folder
+   - Add aki_backend.py to project resources
+
+7. Build and Run!
+
+See XCODE_SETUP.md for detailed instructions.
+EOF
+
+echo "[✓] Setup instructions created"
+
+# Create a simple test script
+cat > test_backend.sh << 'EOF'
+#!/bin/bash
+# Test if Python backend works
+python3 aki_backend.py "hello world" "core" "neutral" "based"
+EOF
+
+chmod +x test_backend.sh
+
+echo "[3/4] Created test script"
+
+# Summary
+echo ""
+echo "[✓] Setup complete!"
+echo ""
+echo "Files created in ./xcode_files/:"
+echo "  - AKITerminalApp.swift"
+echo "  - ContentView.swift"
+echo "  - aki_backend.py"
+echo "  - README_XCODE.txt"
+echo "  - test_backend.sh"
+echo ""
+echo "Next steps:"
+echo "  1. Copy Swift file contents from the artifacts I created"
+echo "  2. Open Xcode and create new macOS App project"
+echo "  3. Replace default files with the ones in xcode_files/"
+echo "  4. Build and run!"
+echo ""
+echo "See XCODE_SETUP.md for detailed instructions"

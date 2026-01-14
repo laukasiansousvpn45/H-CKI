@@ -1,0 +1,105 @@
+AKI Terminal - Xcode Setup Guide
+Step 1: Create Xcode Project
+	1	Open Xcode
+	2	Create New Project → macOS → App
+	3	Product Name: AKI Terminal
+	4	Interface: SwiftUI
+	5	Language: Swift
+	6	Save to your aki_system directory
+Step 2: Add Swift Files
+In Xcode Project Navigator:
+	1	Delete the default ContentView.swift
+	2	Right-click on project → New File → Swift File
+	3	Create these files:
+	◦	AKITerminalApp.swift (replace main app file)
+	◦	ContentView.swift
+Copy the code I provided into each file.
+Step 3: Add Python Backend
+	1	In Xcode, right-click project → Add Files
+	2	Select aki_backend.py from your directory
+	3	Make sure "Copy items if needed" is checked
+	4	Target Membership: Check your app target
+Step 4: Configure App Settings
+Info.plist Configuration
+	1	Click on project in Navigator
+	2	Select your app target
+	3	Go to "Info" tab
+	4	Add new entries:
+<key>NSAppTransportSecurity</key>
+<dict>
+    <key>NSAllowsArbitraryLoads</key>
+    <true/>
+</dict>
+Build Settings
+	1	Go to "Build Settings"
+	2	Search for "Python"
+	3	Under "Build Phases" → Add "Copy Files Phase"
+	4	Add aki_backend.py to be copied to Resources
+Step 5: Project Structure
+Your Xcode project should look like:
+AKI Terminal/
+├── AKITerminalApp.swift        # Main app entry
+├── ContentView.swift            # UI views
+├── Assets.xcassets/             # App icon
+├── Info.plist
+└── Resources/
+    └── aki_backend.py          # Python bridge
+Step 6: Build and Run
+	1	Select target: My Mac
+	2	Click Run button (or Cmd+R)
+	3	App should launch with terminal interface
+Features Implemented
+✅ Terminal-like UI - Black background, monospace font ✅ Dropdown Menus - Persona, Tone, Output (top left) ✅ Status Bar - Model, Local/Remote server (top right) ✅ Command Input - Bottom with live prompt ✅ Scrolling Output - Auto-scrolls to latest ✅ Color Coding - Commands, responses, errors ✅ Python Integration - Calls aki_backend.py
+Customization
+Colors (in ContentView.swift)
+// Terminal background
+Color(red: 0.12, green: 0.12, blue: 0.12)
+
+// Text colors
+.foregroundColor(.green)  // Prompt
+.foregroundColor(.cyan)   // Info
+.foregroundColor(.yellow) // Warnings
+Window Size
+In AKITerminalApp.swift:
+.frame(minWidth: 800, minHeight: 600)
+Troubleshooting
+Python not found
+Add Python path in AppState.swift:
+process.executableURL = URL(fileURLWithPath: "/usr/local/bin/python3")
+Backend not responding
+Check the script is copied to Resources:
+	•	Build Phases → Copy Files → aki_backend.py should be listed
+Menu not working
+Make sure .menuStyle(.borderlessButton) is applied
+Integration with Full AKI System
+To connect with Ollama:
+	1	Modify aki_backend.py to import your aki_simple.py
+	2	Add Ollama calls in the backend
+	3	Update AppState to handle streaming responses
+Example Integration:
+# In aki_backend.py
+from aki_simple import process_query
+import requests
+
+def call_ollama(prompt, system_prompt):
+    response = requests.post('http://localhost:11434/api/generate', 
+        json={
+            'model': 'deepseek',
+            'prompt': prompt,
+            'system': system_prompt
+        })
+    return response.json()
+Next Steps
+	1	✅ Build basic app
+	2	✅ Test interface
+	3	🔄 Connect to aki_simple.py
+	4	🔄 Add Ollama integration
+	5	🔄 Add search capabilities
+	6	🔄 Add sandbox execution
+App Icon
+Create 1024x1024 icon with Terminal aesthetic:
+	•	Black background
+	•	Green ">_" prompt symbol
+	•	Add to Assets.xcassets
+
+Note: This creates a native macOS app that looks and feels like Terminal but with AKI's enhanced features!

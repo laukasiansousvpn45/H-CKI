@@ -1,0 +1,18 @@
+# h@cky – a modular “terminal” for pentesters
+
+A minimal, plug‑and‑play CLI that bundles:
+
+* **nmap** quick scans (simulated if nmap isn’t installed)  
+* **DuckDuckGo** / **Tavily** web look‑ups  
+* **Selenium** headless browsing (ChromeDriver)  
+* Simple sandboxed command execution  
+
+## Install
+
+```bash
+git clone https://github.com/yourname/h@cky.git
+cd h@cky
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+# optional: brew install nmap chromedriver

@@ -1,0 +1,23 @@
+{
+  "local_server": "ollama",
+  "local_model": "deepseek",
+  "remote_server": "",
+  "database_file": "database.txt",
+  "database_url": "www.database.exemple.net",
+  "show_model_info": true,
+  "show_server_info": true,
+  "enable_sandbox": false,
+  "enable_tor": false,
+  "log_file": "aki.log",
+  "log_encrypted": true,
+  "debug": false,
+  "honeypot_enabled": true,
+  "academic_databases": [
+    "openedition.org",
+    "wikipedia.org",
+    "archive.org"
+  ],
+  "juridical_databases": [
+    "legifrance.fr"
+  ]
+}
