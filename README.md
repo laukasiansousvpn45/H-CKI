@@ -1,2 +1,3 @@
-# H-CKI
-AKI SYSTEM 
+# AKI SYSTEM 
+GIT CLONE '..' 
+r3dm3.txt
